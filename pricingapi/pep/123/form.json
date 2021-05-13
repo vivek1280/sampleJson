@@ -1,0 +1,18 @@
+{
+      "quantity":{
+         "type":"string",
+         "title":"Quantity",
+         "required":true
+      },
+      "color":{
+         "title":"Color",
+         "type":"string",
+         "enum":[
+            "1 over 0",
+            "1 over 1",
+            "4 over 0",
+            "4 over 1",
+            "4 over 4"
+         ]
+      }
+   }

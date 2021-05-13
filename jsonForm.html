@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Getting started with JSON Form</title>
+  <link rel="stylesheet" type="text/css" href="deps/opt/bootstrap.css" />
+</head>
+<body>
+  <form id="myForm" style="width:300px;"></form>
+  <div id="res" class="alert"></div>
+  <script type="text/javascript" src="deps/jquery.min.js"></script>
+  <script type="text/javascript" src="deps/underscore.js"></script>
+  <script type="text/javascript" src="deps/opt/jsv.js"></script>
+  <script type="text/javascript" src="lib/jsonform.js"></script>
+  <script type="text/javascript">
+  $.getJSON('/pricingapi/pep/123/form.json',function(formData){
+        $('#myForm').jsonForm({schema: formData,
+          onSubmit: function (errors, values) {
+            if (errors) {
+              $('#res').html('<p>I beg your pardon?</p>');
+            } else {
+              $('#res').html(JSON.stringify(values));
+            }
+          }
+        });
+    
+    });
+
+  
+  
+  
+  </script>
+</body>
+</html>
